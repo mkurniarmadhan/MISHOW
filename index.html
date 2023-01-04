@@ -4,46 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/assets/image/icon-192x192.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
+    <title>MISHOW</title>
     <!-- Custom Css -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <!-- IONIC Icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!-- Custom Js -->
-    <script src="main.js"></script>
   </head>
   <body>
     <nav>
       <h3>MISHOW</h3>
-      <ion-icon name="list-outline"></ion-icon>
+      <div class="search_bar">
+        <ion-icon name="search-outline"></ion-icon>
+        <input type="search" placeholder="Cari.." />
+      </div>
     </nav>
-    <div class="search_bar">
-      <ion-icon name="search-outline"></ion-icon>
-      <input type="search" placeholder="Cari.." />
-    </div>
 
     <main>
       <br />
-      <strong> All Movies </strong>
-      <div class="img_area">
-        <div class="box">
-          <img src="assets/image/movie_1.jpg" alt="" class="img_file" />
-          <p>judul</p>
-        </div>
-        <div class="box">
-          <img src="assets/image/movie_1.jpg" alt="" class="img_file" />
-          <p>judul</p>
-        </div>
-        <div class="box">
-          <img src="assets/image/movie_1.jpg" alt="" class="img_file" />
-          <p>judul</p>
-        </div>
-        <div class="box">
-          <img src="assets/image/movie_1.jpg" alt="" class="img_file" />
-          <p>judul</p>
-        </div>
-      </div>
+
+      <strong> Trending Movies </strong>
+      <div id="movie" class="img_area"></div>
     </main>
     <div class="preview">
       <div class="preview_cont">
@@ -51,11 +37,22 @@
         <div class="bx">
           <img src="#" alt="" />
           <div class="buttons">
-            <button>Favourite</button>
-            <button>PLAY NOW</button>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam quia, animi nobis beatae recusandae iste debitis at repellendus, error minus! Dignissimos eligendi nam nulla,
+              nesciunt recusandae laboriosam fugiat quae!
+            </p>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' });
+      }
+    </script>
+    <!-- JQUERY -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>
